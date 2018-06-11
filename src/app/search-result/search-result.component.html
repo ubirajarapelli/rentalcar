@@ -1,0 +1,34 @@
+<article *ngFor="let resultado of exibirResutados">
+  <div>
+    <div>
+      <span class="discount">{{resultado.porcentagemDesconto}}</span>
+      <img src="{{resultado.urlImagem}}" alt="">
+      <span class="brand">{{resultado.marca}}</span>
+    </div>
+    <div>
+      <span [ngClass]="resultadofavorito === true ? 'liked liked-ok' : 'liked'"></span>
+      <h2>{{resultado.titulo}}</h2>
+      <span>Código da taxa: {{resultado.codigoTaxa}}</span>
+      <span></span>
+      <ul>
+        <li></li>
+      </ul>
+    </div>
+    <div>
+      <p>{{resultado.detalhes}}</p>
+    </div>
+    <div>
+      <ul>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <h3>Total da locação</h3>
+    <p>de {{resultado.valorTotal}}</p>
+    <p>por {{resultado.valorDesconto}}<strong>em até {{resultado.qtdParcelas}}x</strong></p>
+
+    <button>Alugar</button>
+    <span>Taxas inclusas</span>
+  </div>
+</article>
