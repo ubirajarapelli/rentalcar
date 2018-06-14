@@ -1,34 +1,44 @@
 <article *ngFor="let resultado of exibirResutados">
-  <div>
-    <div>
-      <span class="discount">{{resultado.porcentagemDesconto}}</span>
+  <div class="product">
+    <div class="product-image">
+      <span *ngIf="resultado.porcentagemDesconto" class="discount-block">
+        Desconto <strong>{{resultado.porcentagemDesconto}}</strong>
+      </span>
       <img src="{{resultado.urlImagem}}" alt="">
-      <span class="brand">{{resultado.marca}}</span>
+      <span class="brand-block">{{resultado.marca}}</span>
     </div>
-    <div>
-      <span [ngClass]="resultadofavorito === true ? 'liked liked-ok' : 'liked'"></span>
+    <div class="product-content">
+      <i [ngClass]="resultado.favorito === true ? 'liked liked-ok' : 'liked'"></i>
       <h2>{{resultado.titulo}}</h2>
       <span>Código da taxa: {{resultado.codigoTaxa}}</span>
-      <span></span>
+      <span>{{resultado.marcas}}</span>
       <ul>
-        <li></li>
+        <li *ngFor="let atributo of resultado.atributos">{{atributo}}</li>
       </ul>
     </div>
-    <div>
+    <div class="product-details">
       <p>{{resultado.detalhes}}</p>
     </div>
-    <div>
+    <div class="product-items">
       <ul>
-        <li></li>
+        <li class="icon-doors" *ngIf="resultado.itens.portas.exibir">{{resultado.itens.portas.valor}} portas </li>
+        <li class="icon-passanger" *ngIf="resultado.itens.passageiros.exibir">{{resultado.itens.passageiros.valor}} pessoas</li>
+        <li class="icon-trunk" *ngIf="resultado.itens.portaMalas.exibir">{{resultado.itens.portaMalas.valor}} malas</li>
+        <li class="icon-airconditioning" *ngIf="resultado.itens.arCondicionado.exibir">{{resultado.itens.arCondicionado.valor}}</li>
+        <li class="icon-transmisson" *ngIf="resultado.itens.transmissao.exibir">{{resultado.itens.transmissao.valor}}</li>
+        <li class="icon-steeringwheel" *ngIf="resultado.itens.direcao.exibir">{{resultado.itens.direcao.valor}}</li>
+        <li class="icon-electricglass" *ngIf="resultado.itens.vidroEletrico.exibir">{{resultado.itens.vidroEletrico.valor}}</li>
+        <li class="icon-multimedia" *ngIf="resultado.itens.multimedia.exibir">{{resultado.itens.multimedia.valor}}</li>
+        <li class="icon-radio" *ngIf="resultado.itens.radio.exibir">{{resultado.itens.radio.valor}}</li>
       </ul>
     </div>
   </div>
-  <div>
-    <h3>Total da locação</h3>
-    <p>de {{resultado.valorTotal}}</p>
-    <p>por {{resultado.valorDesconto}}<strong>em até {{resultado.qtdParcelas}}x</strong></p>
+      <div class="main-action">
+        <h3>Total da locação</h3>
+        <p>de {{resultado.valorTotal}}</p>
+        <p>por {{resultado.valorDesconto}}<strong>em até {{resultado.qtdParcelas}}x</strong></p>
 
-    <button>Alugar</button>
-    <span>Taxas inclusas</span>
-  </div>
+        <button class="button">Alugar</button>
+        <span>Taxas inclusas</span>
+      </div>
 </article>

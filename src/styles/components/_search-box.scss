@@ -1,0 +1,43 @@
+[search-box] {
+  background: color(primary);
+  padding: .5em;
+
+  form {
+    label {
+      font-size: .765em;
+    }
+
+    input[type="text"] {
+      width: 100%;
+    }
+  }
+
+  .checkbox {
+    label {
+      font-weight: 800;
+      color: color(secondary);
+    }
+  }
+
+  .economy {
+    .checkbox {
+      label {
+        font-weight: normal;
+      }
+      input {
+        &:checked {
+          ~ label {
+              &::after {
+                margin-left: .4em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .button {
+    width: 100%;
+    padding: 1.8em;
+  }
+}

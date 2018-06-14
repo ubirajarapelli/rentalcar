@@ -1,39 +1,155 @@
-<form action="#">
+<form [formGroup]="searchForm">
   <label for="local-retirada">Local de retirada</label>
-  <input type="text" name="local-retirada" id="local-retirada">
+  <input type="text" formControlName="localRetirada" id="local-retirada" placeholder="Ex. São Paulo">
+  <span class="checkbox">
+    <input type="checkbox" formControlName="devolverOutroLocal" id="devolucao-outro-local" (change)="mostrarDevolucao()">
+    <label for="devolucao-outro-local">Devolver o carro em outro local</label>
+  </span>
 
-  <label for="devolucao-outro-local">Devolver o carro em outro local</label>
-  <input type="checkbox" name="devolucao-outro-local" id="devolucao-outro-local">
+  <span *ngIf="mostrarCampoDevolucao">
+    <label for="local-devolucao">Local de devolução</label>
+    <input type="text" formControlName="localDevolucao" id="local-devolucao" placeholder="Ex. Recife">
+  </span>
 
-  <label for="local-devolucao">Local de devolução</label>
-  <input type="text" name="local-devolucao" id="local-devolucao">
-
-  <fieldset>
+  <fieldset class="datetime-group">
     <legend>Retirada</legend>
-    <label for="data-retirada">Data da retirada</label>
-    <input type="text" name="retirada" id="retirada">
-    <label for="horario-retirada">Horário da retirada</label>
-    <input type="text" name="retirada" id="retirada">
+    <div>
+      <label for="data-retirada">Data da retirada</label>
+      <span class="datetime">
+        <input type="text" formControlName="dataRetirada" id="retirada">
+      </span>
+      <label for="horario-retirada">Horário da retirada</label>
+      <span class="select">
+        <select formControlName="horarioRetirada" id="retirada">
+          <option value="12:00 AM">12:00 AM</option>
+          <option value="12:30 AM">12:30 AM</option>
+          <option value="01:00 AM">01:00 AM</option>
+          <option value="01:30 AM">01:30 AM</option>
+          <option value="02:00 AM">02:00 AM</option>
+          <option value="02:30 AM">02:30 AM</option>
+          <option value="03:00 AM">03:00 AM</option>
+          <option value="03:30 AM">03:30 AM</option>
+          <option value="04:00 AM">04:00 AM</option>
+          <option value="04:30 AM">04:30 AM</option>
+          <option value="05:00 AM">05:00 AM</option>
+          <option value="05:30 AM">05:30 AM</option>
+          <option value="06:00 AM">06:00 AM</option>
+          <option value="06:30 AM">06:30 AM</option>
+          <option value="07:00 AM">07:00 AM</option>
+          <option value="07:30 AM">07:30 AM</option>
+          <option value="08:00 AM">08:00 AM</option>
+          <option value="08:30 AM">08:30 AM</option>
+          <option value="09:00 AM">09:00 AM</option>
+          <option value="09:30 AM">09:30 AM</option>
+          <option value="10:00 AM">10:00 AM</option>
+          <option value="10:30 AM">10:30 AM</option>
+          <option value="11:00 AM">11:00 AM</option>
+          <option value="11:30 AM">11:30 AM</option>
+          <option value="12:00 PM">12:00 PM</option>
+          <option value="12:30 PM">12:30 PM</option>
+          <option value="01:00 PM">01:00 PM</option>
+          <option value="01:30 PM">01:30 PM</option>
+          <option value="02:00 PM">02:00 PM</option>
+          <option value="02:30 PM">02:30 PM</option>
+          <option value="03:00 PM">03:00 PM</option>
+          <option value="03:30 PM">03:30 PM</option>
+          <option value="04:00 PM">04:00 PM</option>
+          <option value="04:30 PM">04:30 PM</option>
+          <option value="05:00 PM">05:00 PM</option>
+          <option value="05:30 PM">05:30 PM</option>
+          <option value="06:00 PM">06:00 PM</option>
+          <option value="06:30 PM">06:30 PM</option>
+          <option value="07:00 PM">07:00 PM</option>
+          <option value="07:30 PM">07:30 PM</option>
+          <option value="08:00 PM">08:00 PM</option>
+          <option value="08:30 PM">08:30 PM</option>
+          <option value="09:00 PM">09:00 PM</option>
+          <option value="09:30 PM">09:30 PM</option>
+          <option value="10:00 PM">10:00 PM</option>
+          <option value="10:30 PM">10:30 PM</option>
+          <option value="11:00 PM">11:00 PM</option>
+          <option value="11:30 PM">11:30 PM</option>
+        </select>
+      </span>
+    </div>
   </fieldset>
 
-  <fieldset>
+  <fieldset class="datetime-group">
     <legend>Devolução</legend>
-    <label for="data-devolucao">Data da devolução</label>
-    <input type="text" name="devolucao" id="devolucao">
-
-    <label for="devolucao">Horário da devolução</label>
-    <input type="text" name="devolucao" id="devolucao">
+    <div>
+      <label for="data-devolucao">Data da devolução</label>
+      <span class="datetime">
+        <input type="text" formControlName="dataDevolucao" id="devolucao">
+      </span>
+      <label for="devolucao">Horário da devolução</label>
+      <span class="select">
+        <select formControlName="horarioDevolucao" id="devolucao">
+          <option value="12:00 AM">12:00 AM</option>
+          <option value="12:30 AM">12:30 AM</option>
+          <option value="01:00 AM">01:00 AM</option>
+          <option value="01:30 AM">01:30 AM</option>
+          <option value="02:00 AM">02:00 AM</option>
+          <option value="02:30 AM">02:30 AM</option>
+          <option value="03:00 AM">03:00 AM</option>
+          <option value="03:30 AM">03:30 AM</option>
+          <option value="04:00 AM">04:00 AM</option>
+          <option value="04:30 AM">04:30 AM</option>
+          <option value="05:00 AM">05:00 AM</option>
+          <option value="05:30 AM">05:30 AM</option>
+          <option value="06:00 AM">06:00 AM</option>
+          <option value="06:30 AM">06:30 AM</option>
+          <option value="07:00 AM">07:00 AM</option>
+          <option value="07:30 AM">07:30 AM</option>
+          <option value="08:00 AM">08:00 AM</option>
+          <option value="08:30 AM">08:30 AM</option>
+          <option value="09:00 AM">09:00 AM</option>
+          <option value="09:30 AM">09:30 AM</option>
+          <option value="10:00 AM">10:00 AM</option>
+          <option value="10:30 AM">10:30 AM</option>
+          <option value="11:00 AM">11:00 AM</option>
+          <option value="11:30 AM">11:30 AM</option>
+          <option value="12:00 PM">12:00 PM</option>
+          <option value="12:30 PM">12:30 PM</option>
+          <option value="01:00 PM">01:00 PM</option>
+          <option value="01:30 PM">01:30 PM</option>
+          <option value="02:00 PM">02:00 PM</option>
+          <option value="02:30 PM">02:30 PM</option>
+          <option value="03:00 PM">03:00 PM</option>
+          <option value="03:30 PM">03:30 PM</option>
+          <option value="04:00 PM">04:00 PM</option>
+          <option value="04:30 PM">04:30 PM</option>
+          <option value="05:00 PM">05:00 PM</option>
+          <option value="05:30 PM">05:30 PM</option>
+          <option value="06:00 PM">06:00 PM</option>
+          <option value="06:30 PM">06:30 PM</option>
+          <option value="07:00 PM">07:00 PM</option>
+          <option value="07:30 PM">07:30 PM</option>
+          <option value="08:00 PM">08:00 PM</option>
+          <option value="08:30 PM">08:30 PM</option>
+          <option value="09:00 PM">09:00 PM</option>
+          <option value="09:30 PM">09:30 PM</option>
+          <option value="10:00 PM">10:00 PM</option>
+          <option value="10:30 PM">10:30 PM</option>
+          <option value="11:00 PM">11:00 PM</option>
+          <option value="11:30 PM">11:30 PM</option>
+        </select>
+      </span>
+    </div>
   </fieldset>
 
-  <fieldset>
+  <fieldset class="economy">
     <legend>Economize até 35%</legend>
-    <label for="incluir-voo">Incluir voo</label>
-    <input type="checkbox" name="incluir-voo" id="incluir-voo">
+    <span class="checkbox">
+      <input type="checkbox" formControlName="incluirVoo" id="incluir-voo">
+      <label for="incluir-voo">Incluir voo</label>
+    </span>
 
-    <label for="incluir-hotel">Incluir hotel</label>
-    <input type="checkbox" name="incluir-hotel" id="incluir-hotel">
+    <span class="checkbox">
+      <input type="checkbox" formControlName="incluirHotel" id="incluir-hotel">
+      <label for="incluir-hotel">Incluir hotel</label>
+    </span>
   </fieldset>
 
-  <button>Buscar</button>
+  <button class="button">Buscar</button>
 </form>
 

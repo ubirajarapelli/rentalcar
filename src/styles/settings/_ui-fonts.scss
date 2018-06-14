@@ -1,0 +1,20 @@
+$ui-fonts: (
+  light: (
+    name: 'fontDefault',
+    path: '../assets/fonts/oswald-light-webfont',
+    weight: 400,
+    style: normal
+  ),
+  base: (
+    name: 'fontDefault',
+    path: '../assets/fonts/oswald-regular-webfont',
+    weight: 400,
+    style: normal
+  ),
+  bold: (
+    name: 'fontDefault',
+    path: '../assets/fonts/oswald-bold-webfont',
+    weight: 600,
+    style: normal
+  )
+) !default;

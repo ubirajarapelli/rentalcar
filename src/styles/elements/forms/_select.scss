@@ -1,0 +1,28 @@
+select {
+  border: none;
+  appearance: none;
+}
+
+.select {
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 25%;
+    right: 10%;
+    padding: 3px;
+    border: solid color(secondary);
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+
+  select {
+    padding: {
+      top: .3em;
+      right: 1.8em;
+    }
+    cursor: pointer;
+  }
+}

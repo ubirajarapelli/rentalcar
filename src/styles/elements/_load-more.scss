@@ -1,0 +1,30 @@
+// .load-more {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 100%;
+//   margin: 1em 0;
+//   padding: .5em;
+//   border: none;
+//   font-size: 1em;
+//   color: color(primary);
+//   background-color: color(light);
+//   border-radius: $default-border-radius;
+//   cursor: pointer;
+//   transition: background-color .2s ease-in;
+
+//   &:hover {
+//     background-color: color(light, medium);
+//   }
+
+//   & svg {
+//     width: 20px;
+//     height: 20px;
+//     padding: 1em;
+//     fill: color(primary);
+//   }
+
+//   &.hide {
+//     @include hide-element;
+//   }
+// }

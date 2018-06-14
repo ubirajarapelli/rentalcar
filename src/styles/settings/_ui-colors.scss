@@ -1,0 +1,15 @@
+$ui-colors: (
+    success: #68b42e,
+    warning: orange,
+    error: red,
+    light: (
+        lighter: #FFFFFF,
+        medium: #DBDBDB,
+        base: #F0F0F0,
+    ),
+    dark: (
+        base: #cdcdcd,
+        medium: #040404,
+        darker: #000000,
+    )
+) !default;

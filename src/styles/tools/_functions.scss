@@ -1,0 +1,38 @@
+/// Map deep get
+/// Função auxilar qur percorre as chaves aninhadas de um mapa
+
+@function _map-deep-get($map, $keys...) {
+    @each $key in $keys {
+      $map: map-get($map, $key);
+    }
+    @return $map;
+  }
+
+  /// Color
+  /// Função que retorna a cor definida nos mapas Brand Color e Ui Colors
+
+  @function color($color, $variation: null) {
+    @if variable-exists(brand-colors) and variable-exists(ui-colors) {
+      $all-colors: map-merge($brand-colors, $ui-colors);
+  
+      @if map-has-key($all-colors, $color) {
+        $type: map-get($all-colors, $color);
+  
+        @if $variation == null {
+          @if type-of($type) == map {
+            @return _map-deep-get($all-colors, $color, 'base');
+          } @else {
+            @return map-get($all-colors, $color);
+          }
+        } @else {
+          @return _map-deep-get($all-colors, $color, $variation);
+        }
+      } @else {
+        @warn 'A chave "#{$color}" nao existe no mapa "$brand-colors" e nem no mapa "$ui-colors"';
+      }
+    } @else {
+      @warn 'Os mapas "$brand-colors" e "$ui-colors" nao existem. Por favor crie eles e tente novamente!';
+    }
+  }
+  
+  

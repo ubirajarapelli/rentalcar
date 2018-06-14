@@ -1,0 +1,79 @@
+%icons{
+  &::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: color(terciary);
+    transform: scale(.8);
+  }
+}
+
+.icon {
+  &-doors {
+    @extend %icons;
+    &::before {
+      mask-image: url(../assets/icons/baseline-drive.svg) no-repeat;
+      -webkit-mask: url(../assets/icons/baseline-drive.svg) no-repeat;
+    }
+  }
+  &-passanger {
+    @extend %icons;
+    &::before {
+      mask-image: url(../assets/icons/baseline-person.svg) no-repeat;
+      -webkit-mask: url(../assets/icons/baseline-person.svg) no-repeat;
+    }
+
+  }
+  &-trunk {
+    @extend %icons;
+    &::before {
+      mask-image: url(../assets/icons/baseline-work.svg) no-repeat;
+      -webkit-mask: url(../assets/icons/baseline-work.svg) no-repeat;
+    }
+
+  }
+  &-airconditioning {
+    @extend %icons;
+    &::before {
+      mask-image: url(../assets/icons/baseline-ac.svg) no-repeat;
+      -webkit-mask: url(../assets/icons/baseline-ac.svg) no-repeat;
+    }
+  }
+  &-transmisson {
+    @extend %icons;
+    &::before {
+      mask-image: url(../assets/icons/baseline-font.svg) no-repeat;
+      -webkit-mask: url(../assets/icons/baseline-font.svg) no-repeat;
+    }
+  }
+  &-steeringwheel {
+    @extend %icons;
+    &::before {
+      mask-image: url(../assets/icons/baseline-favorite.svg) no-repeat;
+      -webkit-mask: url(../assets/icons/baseline-favorite.svg) no-repeat;
+    }
+  }
+  &-electricglass {
+    @extend %icons;
+    &::before {
+      mask-image: url(../assets/icons/baseline-aspect-ratio.svg) no-repeat;
+      -webkit-mask: url(../assets/icons/baseline-aspect-ratio.svg) no-repeat;
+    }
+  }
+  &-multimedia {
+    @extend %icons;
+    &::before {
+      mask-image: url(../assets/icons/baseline-usb.svg) no-repeat;
+      -webkit-mask: url(../assets/icons/baseline-usb.svg) no-repeat;
+    }
+  }
+  &-radio {
+    @extend %icons;
+    &::before {
+      mask-image: url(../assets/icons/baseline-audiotrack.svg) no-repeat;
+      -webkit-mask: url(../assets/icons/baseline-audiotrack.svg) no-repeat;
+    }
+  }
+}

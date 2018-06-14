@@ -1,0 +1,22 @@
+// .group-button{
+//   display: flex;
+//   align-items: flex-start;
+
+//   > .button + .button {
+//     border-left: 1px solid darken(color(primary), 10%);
+//   }
+
+//   & .button {
+//     border-radius: 0;
+
+//     &:first-child {
+//       border-top-left-radius: $default-border-radius;
+//       border-bottom-left-radius: $default-border-radius;
+//     }
+
+//     &:last-child {
+//       border-top-right-radius: $default-border-radius;
+//       border-bottom-right-radius: $default-border-radius;
+//     }
+//   }
+// }

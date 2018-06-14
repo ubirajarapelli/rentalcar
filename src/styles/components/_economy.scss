@@ -1,0 +1,23 @@
+.economy {
+  display: block;
+  margin: 1em 0;
+  border: 1px solid color(success);
+  background-color: transparentize(color(light, lighter), 0.4);
+
+  legend {
+    float: left;
+    width: 100%;
+    padding: .3em;
+    border: 1px solid color(success);
+    text-transform: uppercase;
+    font-size: .75em;
+    color: color(light, lighter);
+    background-color: color(success)
+  }
+
+  & .checkbox {
+    display: inline-block;
+    margin: .5em;
+    line-height: 1.2em;
+  }
+}
