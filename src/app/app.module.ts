@@ -8,13 +8,15 @@ import { HttpService } from './services/http.service';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { SearchResultService } from './search-result/search-result.service';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBoxComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

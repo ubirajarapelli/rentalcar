@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { SearchResultService } from './search-result.service';
 
 import { Observable } from 'rxjs/Rx';
@@ -13,9 +13,14 @@ import 'rxjs/add/operator/map';
 })
 export class SearchResultComponent implements OnInit {
 
-  constructor(private searchResultService: SearchResultService) { }
+  constructor(
+    private searchResultService: SearchResultService,
+    private elementRef: ElementRef,
+    private renderer: Renderer2,
+  ) { }
 
-  exibirResutados: any;
+  exibirResutados: object;
+  moreDetalis: boolean = false;
 
   ngOnInit() {
     this.listarBusca()
@@ -29,4 +34,9 @@ export class SearchResultComponent implements OnInit {
       )
   }
 
+  showDetails(index) {
+    const btn = this.elementRef.nativeElement.querySelector(`.action-${index}`);
+    const div = btn.parentNode.nextElementSibling;
+    return (div.classList.contains('showing') === true) ? this.renderer.removeClass(div, 'showing') : this.renderer.addClass(div, 'showing')
+  }
 }

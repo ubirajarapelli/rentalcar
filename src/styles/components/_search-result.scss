@@ -17,29 +17,20 @@
   .product {
     display: inline-block;
     vertical-align: top;
-    border: 1px solid color(dark);
+    // border: 1px solid color(dark);
     background: color(light, lighter);
-    // border: {
-    //   // top: 1px solid color(dark);
-    //   // right: 0;
-    //   // bottom: 1px solid color(dark);
-    //   // left: 1px solid color(dark);
-    // }
 
     .product-image {
       position: relative;
       display: inline-block;
       vertical-align: top;
-      // width: 280px;
-      // height: 200px;
     }
+
     .product-content {
       position: relative;
       display: inline-block;
       vertical-align: top;
       padding: .5em;
-      // width: 372px;
-      // height: 200px;
 
       h2 {
         font-size: 1.25em;
@@ -62,9 +53,29 @@
     }
 
     .product-details {
+      position: relative;
+      display: none;
       padding: .5em;
       border-top: 1px solid color(dark);
       font-size: .875em;
+
+      &.showing {
+        display: block;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        bottom: 100%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+
+        border-bottom: 12px solid color(dark);
+      }
     }
   }
 
@@ -76,13 +87,74 @@
       font-size: .875em;
       color: color(terciary);
       li {
-        display: inline;
+        display: inline-block;
+        line-height: 2em;
       }
     }
   }
 
   .main-action {
     display: inline-block;
+    padding: 1em .5em;
     background-color: color(primary);
+
+    div {
+      display: inline-block;
+    }
+
+    h3 {
+      margin-bottom: .5em;
+    }
+
+    p{
+      line-height: 1.4em;
+    }
+
+    strong,
+    em {
+      font-weight: 800;
+      color: color(secondary);
+    }
+
+    s {
+      position: relative;
+      text-decoration: none;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0%;
+        display: inline-block;
+        width: 150%;
+        border-top: 2px solid darken(color(error), 20%);
+        transform: rotate(173deg);
+      }
+    }
+    strong {
+      font-size: 1.4em;
+    }
+
+    em {
+      font-size: 1em;
+    }
+    span {
+      display: block;
+      font-size: 0.875em;
+    }
+
+    .button {
+      &::before {
+        content: "";
+        position: absolute;
+        left: -22%;
+        display: inline-block;
+        width: 0;
+        height: 0;
+
+        border-top: 14px solid transparent;
+        border-bottom: 14px solid transparent;
+        border-left: 14px solid color(light, lighter);
+      }
+    }
   }
 }

@@ -1,11 +1,13 @@
-<article *ngFor="let resultado of exibirResutados">
+<article *ngFor="let resultado of exibirResutados, let i = index">
   <div class="product">
     <div class="product-image">
       <span *ngIf="resultado.porcentagemDesconto" class="discount-block">
         Desconto <strong>{{resultado.porcentagemDesconto}}</strong>
       </span>
-      <img src="assets/images/{{resultado.urlImagem}}" alt="">
-      <span class="brand-block">{{resultado.marca}}</span>
+      <img src="assets/images/{{resultado.urlImagem}}" alt="{{resultado.urlImagem}}">
+      <span class="brand-block">
+        <img src="assets/images/{{resultado.marca}}-logo.png" alt="{{resultado.marca}}">
+      </span>
     </div>
     <div class="product-content">
       <i [ngClass]="resultado.favorito === true ? 'liked liked-ok' : 'liked'"></i>
@@ -15,6 +17,7 @@
       <ul>
         <li *ngFor="let atributo of resultado.atributos">{{atributo}}</li>
       </ul>
+      <button class="button-details action-{{i}}" (click)="showDetails(i)">Ver detalhes</button>
     </div>
     <div class="product-details">
       <p>{{resultado.detalhes}}</p>
@@ -35,8 +38,15 @@
   </div>
     <div class="main-action">
       <h3>Total da locação</h3>
-      <p>de {{resultado.valorTotal}}</p>
-      <p>por {{resultado.valorDesconto}}<strong>em até {{resultado.qtdParcelas}}x</strong></p>
+      <div *ngIf="resultado.valorDesconto">
+        <p>de <s>R$ {{ resultado.valorTotal }}</s></p>
+        <p>por R$ <strong>{{ resultado.valorDesconto }}</strong></p>
+        <p><em>em até {{resultado.qtdParcelas}}x</em></p>
+      </div>
+      <div *ngIf="!resultado.valorDesconto">
+        <p>por R$ <strong>{{ resultado.valorTotal }}</strong></p>
+        <p><em>em até {{resultado.qtdParcelas}}x</em></p>
+      </div>
 
       <button class="button">Alugar</button>
       <span>Taxas inclusas</span>
