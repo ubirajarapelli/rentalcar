@@ -1,30 +1,68 @@
-# RentACar
+# Rent a Car
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+## Instruções para rodar o teste
 
-## Development server
+### instalação
+1. Você precisará ter o **Node.Js** V6+ instalado em sua máquina, você pode baixar e instalar [neste link do site oficial](https://nodejs.org/en/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    **Permissões**
+    Antes de comecar as instalações, é bom saber. Em sistemas baseados em Unix, pode ocorrer erros por falta de permissão de escrita, para isso, rode o comando `sudo` ex:
 
-## Code scaffolding
+    ```sh
+    $ sudo npm install @angular/cli -g
+    ```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Para o _css preprocessor_ você precisará utilizar o [sass](http://sass-lang.com/)
 
-## Build
+	**Instalação do sass**
+Existem diversos modos de instalação do sass, cheque o site oficial (link acima), mas você consegue instalar via NPM.
+No terminal rode o comando abaixo:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+    ```sh
+    $ npm install node-sass
+    ```
+4. Você precisa fazer um fork do projeto
 
-## Running unit tests
+    ```sh
+    https://github.com/ubirajarapelli/rent-a-car.git
+    ```
+5. **Clone o projeto**
+    No terminal rode o comando abaixo, no diretório desejado
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ```sh
+    $ git clone https://github.com/ubirajarapelli/rent-a-car.git
+    ```
 
-## Running end-to-end tests
+6. **Acesse o diretório do projeto**
+    No terminal rode o comando abaixo
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+    ```sh
+    $ cd rent-a-car
+    ```
 
-## Further help
+7. **Instale as dependências**
+    No terminal rode o comando abaixo
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    ```sh
+    $ npm install
+    ```
 
+#### Rodando o projeto
 
-(https://demo8346836.mockable.io/cars)[https://demo8346836.mockable.io/cars]
+1. **Realizando o Build**
+    No terminal rode o comando abaixo
+
+    ```sh
+    $ npm run build
+    ```
+    Rode esse comando toda vez que você adicionar novos arquivos no diretório `src` e em seus subdiretórios.
+2. **Rodando o projeto (Dev)**
+
+    ```sh
+    $ npm run start
+    ```
+3. **Rodando os teste unitários**
+
+    ```sh
+    $ npm run test
+    ```

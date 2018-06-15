@@ -4,7 +4,7 @@
       <span *ngIf="resultado.porcentagemDesconto" class="discount-block">
         Desconto <strong>{{resultado.porcentagemDesconto}}</strong>
       </span>
-      <img src="{{resultado.urlImagem}}" alt="">
+      <img src="assets/images/{{resultado.urlImagem}}" alt="">
       <span class="brand-block">{{resultado.marca}}</span>
     </div>
     <div class="product-content">
@@ -33,12 +33,12 @@
       </ul>
     </div>
   </div>
-      <div class="main-action">
-        <h3>Total da locação</h3>
-        <p>de {{resultado.valorTotal}}</p>
-        <p>por {{resultado.valorDesconto}}<strong>em até {{resultado.qtdParcelas}}x</strong></p>
+    <div class="main-action">
+      <h3>Total da locação</h3>
+      <p>de {{resultado.valorTotal}}</p>
+      <p>por {{resultado.valorDesconto}}<strong>em até {{resultado.qtdParcelas}}x</strong></p>
 
-        <button class="button">Alugar</button>
-        <span>Taxas inclusas</span>
-      </div>
+      <button class="button">Alugar</button>
+      <span>Taxas inclusas</span>
+    </div>
 </article>

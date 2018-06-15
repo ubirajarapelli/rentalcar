@@ -6,6 +6,7 @@
   }
 
   .product,
+  .product-content,
   .main-action {
     width: 100%;
   }
@@ -19,8 +20,33 @@
 
 }
 
-@media (min-width: 1280px) and (max-width: 1439px){
+@media (min-width: 1280px) {
+  aside {
+    width: 22%;
+  }
+  main{
+    width: 75%;
+    margin-left: 2.5%;
+  }
 
+  .button {
+    padding: 1.4em;
+  }
+
+  .product {
+    width: 77%;
+  }
+
+  .product-image {
+    width: 48%;
+  }
+  .product-content {
+    width: 50%;
+  }
+
+  .main-action {
+    width: 20%;
+  }
 }
 
 @media (min-width: 1440px) {
